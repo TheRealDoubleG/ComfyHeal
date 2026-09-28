@@ -3,7 +3,7 @@
 ## Notes: Secure click-casting and healing assistance for party and raid frames on WoW Forever.
 ## Notes-deDE: Sicheres Click-Casting und Heiler-Unterstützung für Gruppen- und Raidframes in WoW Forever.
 ## Author: TheRealDoubleG
-## Version: 0.2
+## Version: 0.3
 ## SavedVariables: ComfyHealDB
 ## OptionalDeps: ComfyFrames
 ## X-ComfySuite: true
