@@ -83,6 +83,8 @@ f:SetScript("OnEvent",function(_,ev,arg1)
    A:Print(A:T("LOADED").." v"..A.version)
  elseif ev=="ADDON_LOADED" and arg1=="ComfyFrames" then
    if A.RegisterComfyFrames then A:RegisterComfyFrames() end
+ elseif ev=="ADDON_LOADED" and arg1=="ComfyHub" then
+   if A.RegisterDispelCenterWithComfyHub then A:RegisterDispelCenterWithComfyHub() end
  elseif ev=="PLAYER_LOGIN" then
    if A.RegisterComfyFrames then A:RegisterComfyFrames() end
    if A.RequestBindingApply then A:RequestBindingApply() end
