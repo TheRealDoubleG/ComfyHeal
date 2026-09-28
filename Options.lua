@@ -51,8 +51,10 @@ function A:InitializeOptions()
  Label(p,A:T("BIND_HINT"),20,-20,"GameFontHighlight",760)
  local defs={{"left","LEFT"},{"right","RIGHT"},{"middle","MIDDLE"},{"button4","BUTTON4"},{"button5","BUTTON5"},{"shiftLeft","SHIFT_LEFT"},{"shiftRight","SHIFT_RIGHT"},{"ctrlLeft","CTRL_LEFT"},{"ctrlRight","CTRL_RIGHT"},{"altLeft","ALT_LEFT"},{"altRight","ALT_RIGHT"}}
  for i,d in ipairs(defs) do
+   local bindingKey=d[1]
+   local labelKey=d[2]
    local col=(i-1)%3; local row=math.floor((i-1)/3); local x=20+col*280; local y=-75-row*85
-   Edit(p,A:T(d[2]),x,y,230,function() return A.db.bindings[d[1]] end,function(v) A.db.bindings[d[1]]=v end)
+   Edit(p,A:T(labelKey),x,y,230,function() return A.db.bindings[bindingKey] end,function(v) A.db.bindings[bindingKey]=v end)
  end
 
  p=A.pages[3]
