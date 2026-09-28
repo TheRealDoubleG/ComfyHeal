@@ -1,8 +1,13 @@
 # ComfyHeal
 
-**Version 0.1 – Beta**
+**Version 0.2 – Beta**
 
 Healing and secure click-casting toolkit for **World of Warcraft: Forever**.
+
+## 0.2 Beta
+
+- The Dispel Center now participates in ComfyHub's shared Suite Edit Mode.
+- Improved binding configuration callback safety.
 
 ## 0.1 Beta
 
