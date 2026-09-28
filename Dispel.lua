@@ -132,8 +132,17 @@ function A:CreateDispelCenter()
  self:RefreshDispelCenter()
 end
 
+function A:RegisterDispelCenterWithComfyHub()
+ local hub=_G.ComfyHub
+ if not hub or type(hub.RegisterLayoutTarget)~="function" or not self.dispelCenter then return end
+ hub:RegisterLayoutTarget("ComfyHeal","dispelCenter",self.dispelCenter,{
+   setEditMode=function(on) A:SetDispelCenterLocked(not on) end,
+ })
+end
+
 function A:InitializeDispel()
  self:CreateDispelCenter()
+ self:RegisterDispelCenterWithComfyHub()
  local f=CreateFrame("Frame")
  f:RegisterEvent("UNIT_AURA"); f:RegisterEvent("GROUP_ROSTER_UPDATE"); f:RegisterEvent("PLAYER_ENTERING_WORLD"); f:RegisterEvent("PLAYER_TARGET_CHANGED"); f:RegisterEvent("PLAYER_FOCUS_CHANGED")
  f:SetScript("OnEvent",function(_,event,unit)
